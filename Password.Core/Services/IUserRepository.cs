@@ -10,5 +10,7 @@ namespace Password.Core.Services
     public interface IUserRepository
     {
         User GetUserByUsername(string username);
+
+        bool IsEmailValid(string email);
     }
 }

@@ -12,10 +12,12 @@ namespace PasswordWCF
     public class AuthService : IAuthService
     {
         private IEncryptionService _encryptionService;
+        private IEmailService _emailService;
 
-        public AuthService(IEncryptionService encryptionService)
+        public AuthService(IEncryptionService encryptionService, IEmailService emailService)
         {
             _encryptionService = encryptionService;
+            _emailService = emailService;
         }
 
         public bool AreValidUserCredentials(string username, string password)
@@ -26,6 +28,11 @@ namespace PasswordWCF
         public bool AreValidUserCredentialsRequest(Request request)
         {
             return _encryptionService.ValidatePassword(request.username, request.password);
+        }
+
+        public void SendResetEmail(string email)
+        {
+            _emailService.SendResetEmail(email);
         }
     }
 }

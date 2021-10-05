@@ -25,5 +25,10 @@ namespace Password.Infra
         {
             return _users.FirstOrDefault(i => i.Name == username);
         }
+
+        public bool IsEmailValid(string email)
+        {
+            return _users.Exists(item => item.Email == email);
+        }
     }
 }
