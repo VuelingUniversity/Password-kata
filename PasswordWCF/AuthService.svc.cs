@@ -22,5 +22,10 @@ namespace PasswordWCF
         {
             return _encryptionService.ValidatePassword(username, password);
         }
+
+        public bool AreValidUserCredentialsRequest(Request request)
+        {
+            return _encryptionService.ValidatePassword(request.username, request.password);
+        }
     }
 }

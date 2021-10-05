@@ -13,5 +13,18 @@ namespace PasswordWCF
     {
         [OperationContract]
         bool AreValidUserCredentials(string username, string password);
+
+        [OperationContract]
+        bool AreValidUserCredentialsRequest(Request request);
+    }
+
+    [DataContract]
+    public class Request
+    {
+        [DataMember(IsRequired = true)]
+        public string username { get; set; }
+
+        [DataMember(IsRequired = true)]
+        public string password { get; set; }
     }
 }
