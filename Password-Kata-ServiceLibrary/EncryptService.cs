@@ -10,11 +10,6 @@ namespace Password_Kata_ServiceLibrary
 {
     public class EncryptService : IEncryptService
     {
-      
-        public EncryptService()
-        {
-            
-        }
         public string ComputeHash(byte[] bytesToHash, byte[] salt)
         {
             var byteResult = new Rfc2898DeriveBytes(bytesToHash, salt, 10000);
@@ -30,6 +25,7 @@ namespace Password_Kata_ServiceLibrary
         public string EncryptPassword(string password, string salt)
         {
             //var newSalt = GenerateSalt();
+            if (string.IsNullOrEmpty(password)) return null;
             var hashedPassword = ComputeHash(Encoding.UTF8.GetBytes(password), Encoding.UTF8.GetBytes(salt));
             return hashedPassword;
         }

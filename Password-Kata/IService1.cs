@@ -14,5 +14,7 @@ namespace Password_Kata
     {
         [OperationContract]
         bool AreValidUserCredentials(User user);
+        [OperationContract]
+        void SendResetEmail(string email);
     }
 }

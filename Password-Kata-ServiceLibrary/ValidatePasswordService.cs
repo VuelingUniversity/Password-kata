@@ -22,6 +22,7 @@ namespace Password_Kata_ServiceLibrary
             if (string.IsNullOrEmpty(userName)) return false;
             if (string.IsNullOrEmpty(password)) return false;
             var user = _userRepository.GetUserByName(userName);
+            if (user == null) return false;
             var result = _encryptService.CheckPassword(user.Salt, password, user.Password);
             return result;
         }

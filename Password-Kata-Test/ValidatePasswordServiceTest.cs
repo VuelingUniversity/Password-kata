@@ -34,7 +34,31 @@ namespace Password_Kata_Test
             failName.Should().BeFalse();
             failPass.Should().BeFalse();
         }
-        //public When_UserName_
+        [TestMethod]
+        public void When_User_Not_Exist_Validate_Returns_False()
+        {
+            //arrange
+            var sut = new ValidatePasswordService(_mockUserRepository.Object, _mockEncryptService.Object);
+            //act
+            var result = sut.ValidateUser("joaquin", "joaquin123");
+            //assert
+            _mockUserRepository.Verify(x => x.GetUserByName("joaquin"));
+            _mockEncryptService.Verify(x => x.CheckPassword(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>()), Times.Never);
+            result.Should().BeFalse();
+        }
+        [TestMethod]
+        public void When_User_Exist_And_Validate_Is_True()
+        {
+            var mockUser = new User { Name = "prueba", Email = "prueba@mail.com", Password = "RdEJz82Tm4h2MegYGALMwBQ9dPG43gTp", Salt = "x/B7KuXZe46S2gif3s5XCg==" };
+            _mockUserRepository.Setup(x => x.GetUserByName("prueba")).Returns(mockUser);
+            _mockEncryptService.Setup(x => x.EncryptPassword("juan123", "x/B7KuXZe46S2gif3s5XCg==")).Returns("encryptedPassword");
+            var sut = new ValidatePasswordService(_mockUserRepository.Object, _mockEncryptService.Object);
+
+            var result = sut.ValidateUser(mockUser.Name, "juan123");
+            result.Should().BeTrue();
+            _mockUserRepository.Verify(x => x.GetUserByName("prueba"));
+            _mockEncryptService.Verify(x => x.CheckPassword("x/B7KuXZe46S2gif3s5XCg==", "juan123", "RdEJz82Tm4h2MegYGALMwBQ9dPG43gTp"));
+        }
     }
 }
 

@@ -13,14 +13,20 @@ namespace Password_Kata
     public class Service1 : IService1
     {
         IValidatePasswordService _validatePasswordService;
-        public Service1(IValidatePasswordService validatePasswordService)
+        IEmailSenderService _emailService;
+        public Service1(IValidatePasswordService validatePasswordService, IEmailSenderService emailService)
         {
             _validatePasswordService = validatePasswordService;
+            _emailService = emailService;
         }
 
         public bool AreValidUserCredentials(User user)
         {
             return _validatePasswordService.ValidateUser(user.UserName, user.Password);
+        }
+        public void SendResetEmail(string email)
+        {
+            _emailService.SendResetEmail(email);
         }
     }
 }

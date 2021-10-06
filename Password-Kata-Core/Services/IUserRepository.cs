@@ -11,5 +11,6 @@ namespace Password_Kata_Core.Services
     {
         User GetUserByName(string userName);
         string GetPassByName(string userName);
+        bool EmailExistInRepo(string email);
     }
 }

@@ -27,5 +27,9 @@ namespace Password_Kata_Infra
         {
             return _users.FirstOrDefault(x => x.Name == userName).Password;
         }
+        public bool EmailExistInRepo(string email)
+        {
+            return _users.Exists(x => x.Email == email);
+        }
     }
 }
