@@ -56,7 +56,7 @@ namespace Password.ServiceLibrary.Test
         public void When_Password_Is_Correct_ValidateUser_Returns_True()
         {
             // Arrange
-            var fakeUser = new User { Name = "juan23", Email = "juan@gmail.com", Salt = "0xLJsHVXYsvekpbr", Password = "juan1234" /*"FB6979BB477A1805F4DC1BDDB3D0B6ED78ED930C"*/ };
+            var fakeUser = new User { Name = "juan23", Email = "juan@gmail.com", Salt = "0xLJsHVXYsvekpbr", Password = "FB6979BB477A1805F4DC1BDDB3D0B6ED78ED930C" };
             _userRepository.Setup(repository => repository.GetUserByUsername("juan23")).Returns(fakeUser);
             _encryptionService.Setup(service => service.CheckPassword(fakeUser.Salt, "juan1234", fakeUser.Password)).Returns(true);
             var sut = new ValidationService(_userRepository.Object, _encryptionService.Object);

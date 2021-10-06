@@ -11,14 +11,13 @@ namespace PasswordWCF
 {
     public class AuthService : IAuthService
     {
-        private IEncryptionService _encryptionService;
         private IEmailService _emailService;
         private IValidationService _validationService;
 
-        public AuthService(IEncryptionService encryptionService, IEmailService emailService)
+        public AuthService(IEmailService emailService, IValidationService validationService)
         {
-            _encryptionService = encryptionService;
             _emailService = emailService;
+            _validationService = validationService;
         }
 
         public bool AreValidUserCredentials(string username, string password)

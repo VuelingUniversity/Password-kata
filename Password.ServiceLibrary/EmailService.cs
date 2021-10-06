@@ -10,17 +10,20 @@ namespace Password.ServiceLibrary
     public class EmailService : IEmailService
     {
         private IUserRepository _userRepository;
+        private IEmailSender _emailSender;
 
-        public EmailService(IUserRepository userRepository)
+        public EmailService(IUserRepository userRepository, IEmailSender emailSender)
         {
             _userRepository = userRepository;
+            _emailSender = emailSender;
         }
 
         public void SendResetEmail(string email)
         {
             if (_userRepository.IsEmailValid(email))
             {
-                Console.WriteLine("Enviado email de recuperacion de la contraseña");
+                string message = "Hola el link para resetear la constraseña es xxx";
+                _emailSender.SendResetEmail(email, message);
             }
         }
     }

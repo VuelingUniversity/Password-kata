@@ -17,7 +17,7 @@ namespace PasswordWCF
         [OperationContract]
         bool AreValidUserCredentialsRequest(Request request);
 
-        [OperationContract]
+        [OperationContract(IsOneWay = true)]
         void SendResetEmail(string email);
     }
 
