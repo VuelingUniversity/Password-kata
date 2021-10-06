@@ -25,7 +25,7 @@ namespace PasswordKata.Infra
         {
             if (_userList == null || _userList.Count < 1)
                 return false;
-
+            UpdateUserList();
             var userIndex = _userList.FindIndex(user => user.Username == username && user.Password == password);
 
             if (userIndex > -1)

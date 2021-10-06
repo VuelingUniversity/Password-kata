@@ -1,16 +1,19 @@
 using NUnit.Framework;
 using PasswordKata.Core.Services;
+using System.IO;
 
 namespace PasswordKata.Infra.Tests
 {
     public class UserRepositoryTests
     {
         private IUserRepository _userRepository;
+        private string _path;
 
         [SetUp]
         public void Setup()
         {
-            _userRepository = new UserRepository(@"C:\Users\gteam\source\repos\Etapa2\Password-kata\PasswordKata.WCFService\PasswordKata.Infra.Tests\Files\StaticUserList.json");
+            _path = @"C:\Users\gteam\source\repos\Etapa2\Password-kata\PasswordKata.WCFService\PasswordKata.Infra.Tests\Files\StaticUserList.json";
+            _userRepository = new UserRepository(_path);
         }
 
         [Test]
@@ -23,6 +26,32 @@ namespace PasswordKata.Infra.Tests
         public void When_User_Or_Password_Is_Not_Correct_Returns_False()
         {
             Assert.IsFalse(_userRepository.CheckUser("nacho", "wrongPass"));
+        }
+
+        [Test]
+        public void When_User_Is_Unique_AddUser_Returns_True()
+        {
+            string copyPath = @"C:\Users\gteam\source\repos\Etapa2\Password-kata\PasswordKata.WCFService\PasswordKata.Infra.Tests\Files\CopyFiles\StaticUserList.json";
+            try
+            {
+                File.Copy(_path, copyPath);
+                Assert.IsTrue(_userRepository.AddUser("userTest", "encryptedPass"));
+                Assert.IsTrue(_userRepository.CheckUser("userTest", "encryptedPass"));
+            }
+            finally
+            {
+                File.Delete(_path);
+                File.Copy(copyPath, _path);
+                File.Delete(copyPath);
+            }
+            Assert.IsFalse(_userRepository.CheckUser("userTest", "encryptedPass"));
+        }
+
+        [Test]
+        public void When_User_AlreadyExists_Returns_False()
+        {
+            Assert.IsFalse(_userRepository.AddUser("nacho", "1234"));
+            Assert.IsFalse(_userRepository.CheckUser("nacho", "1234"));
         }
     }
 }
