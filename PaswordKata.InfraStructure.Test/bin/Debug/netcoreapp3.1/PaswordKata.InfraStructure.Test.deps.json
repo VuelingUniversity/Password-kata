@@ -6,7 +6,7 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v3.1": {
-      "PaswordKata.InfraStructure.Test/1.0.0": {
+      "PaswordKata.Infrastructure.Test/1.0.0": {
         "dependencies": {
           "MSTest.TestAdapter": "2.1.0",
           "MSTest.TestFramework": "2.1.0",
@@ -15,7 +15,7 @@
           "coverlet.collector": "1.2.0"
         },
         "runtime": {
-          "PaswordKata.InfraStructure.Test.dll": {}
+          "PaswordKata.Infrastructure.Test.dll": {}
         }
       },
       "coverlet.collector/1.2.0": {},
@@ -1087,7 +1087,7 @@
     }
   },
   "libraries": {
-    "PaswordKata.InfraStructure.Test/1.0.0": {
+    "PaswordKata.Infrastructure.Test/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

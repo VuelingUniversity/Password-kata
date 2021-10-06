@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "C7Opom34RUcWp/WewNpG20MknTwwZ4jc0ZSRfvySxx6JhfCpY5Hm9buJDEKBrXR0kq6dTuHWiviX4LBqmrDjlQ==",
+  "dgSpecHash": "DjpN95tHsaHHwAWdE9oNWHT9tBEltT919BdGipzTurkFsB3E0vNKDHdvNWhqDP5EgfFX7g1GyMGkFjMpiQxqTw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\gteam\\source\\repos\\PaswordKata.Core\\PaswordKata.InfraStructure.Test\\PaswordKata.InfraStructure.Test.csproj",
+  "projectFilePath": "C:\\Users\\gteam\\source\\repos\\PaswordKata.Core\\PaswordKata.Infrastructure.Test\\PaswordKata.Infrastructure.Test.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\gteam\\.nuget\\packages\\coverlet.collector\\1.2.0\\coverlet.collector.1.2.0.nupkg.sha512",
     "C:\\Users\\gteam\\.nuget\\packages\\microsoft.codecoverage\\16.5.0\\microsoft.codecoverage.16.5.0.nupkg.sha512",

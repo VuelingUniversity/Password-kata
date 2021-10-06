@@ -5696,11 +5696,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\gteam\\source\\repos\\PaswordKata.Core\\PaswordKata.InfraStructure.Test\\PaswordKata.InfraStructure.Test.csproj",
-      "projectName": "PaswordKata.InfraStructure.Test",
-      "projectPath": "C:\\Users\\gteam\\source\\repos\\PaswordKata.Core\\PaswordKata.InfraStructure.Test\\PaswordKata.InfraStructure.Test.csproj",
+      "projectUniqueName": "C:\\Users\\gteam\\source\\repos\\PaswordKata.Core\\PaswordKata.Infrastructure.Test\\PaswordKata.Infrastructure.Test.csproj",
+      "projectName": "PaswordKata.Infrastructure.Test",
+      "projectPath": "C:\\Users\\gteam\\source\\repos\\PaswordKata.Core\\PaswordKata.Infrastructure.Test\\PaswordKata.Infrastructure.Test.csproj",
       "packagesPath": "C:\\Users\\gteam\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\gteam\\source\\repos\\PaswordKata.Core\\PaswordKata.InfraStructure.Test\\obj\\",
+      "outputPath": "C:\\Users\\gteam\\source\\repos\\PaswordKata.Core\\PaswordKata.Infrastructure.Test\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

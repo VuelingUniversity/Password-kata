@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PasswordKata.Core", "Passwo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PassworKata.ServiceLIbrary", "PassworKata.ServiceLIbrary\PassworKata.ServiceLIbrary.csproj", "{2FAA613A-CE30-4534-B9B5-BA04AC98898F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaswordKata.InfraStructure.Test", "PaswordKata.InfraStructure.Test\PaswordKata.InfraStructure.Test.csproj", "{921034D0-B592-4FB5-B448-89D40DDB1BA7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaswordKata.Infrastructure.Test", "PaswordKata.Infrastructure.Test\PaswordKata.Infrastructure.Test.csproj", "{A017B374-7E6B-4107-B1A4-F7CF6F380ED6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +35,10 @@ Global
 		{2FAA613A-CE30-4534-B9B5-BA04AC98898F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2FAA613A-CE30-4534-B9B5-BA04AC98898F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2FAA613A-CE30-4534-B9B5-BA04AC98898F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{921034D0-B592-4FB5-B448-89D40DDB1BA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{921034D0-B592-4FB5-B448-89D40DDB1BA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{921034D0-B592-4FB5-B448-89D40DDB1BA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{921034D0-B592-4FB5-B448-89D40DDB1BA7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A017B374-7E6B-4107-B1A4-F7CF6F380ED6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A017B374-7E6B-4107-B1A4-F7CF6F380ED6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A017B374-7E6B-4107-B1A4-F7CF6F380ED6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A017B374-7E6B-4107-B1A4-F7CF6F380ED6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
