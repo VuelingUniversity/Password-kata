@@ -5,11 +5,15 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PasswordKata.Core
+namespace PasswordKata.WCFService
 {
+    [DataContract]
     public class User
     {
+        [DataMember(IsRequired = true)]
         public string Username { get; set; }
+
+        [DataMember(IsRequired = true)]
         public string Password { get; set; }
     }
 }
