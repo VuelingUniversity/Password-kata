@@ -16,7 +16,11 @@ public class Service : IService
         var user1 = new User();
         if (user.UserName == user1.UserName && user.Password == user1.Password)
         {
-           
+            /* uso 
+            var hash = SecurityPassword.Hash(user.Password);
+            // Verify
+            var result = SecurityPassword.Verify(user.Password, hash);*/
+
             return true;
         }
         else
