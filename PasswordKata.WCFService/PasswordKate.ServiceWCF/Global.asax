@@ -1,1 +1,1 @@
-﻿<%@ Application Codebehind="Global.asax.cs" Inherits="WcfService1.Global" Language="C#" %>
+﻿<%@ Application CodeBehind="Global.asax.cs" Inherits="PasswordKata.ServiceWCF.Global" Language="C#" %>

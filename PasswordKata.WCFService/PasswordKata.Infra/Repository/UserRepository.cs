@@ -18,6 +18,7 @@ namespace PasswordKata.Infra
         public UserRepository(string path)
         {
             _path = path;
+            UpdateUserList();
         }
 
         public bool CheckUser(string username, string password)
@@ -25,9 +26,9 @@ namespace PasswordKata.Infra
             if (_userList == null || _userList.Count < 1)
                 return false;
 
-            var userList = _userList.Select(user => user.Username == username && user.Password == password);
+            var userIndex = _userList.FindIndex(user => user.Username == username && user.Password == password);
 
-            if (userList != null)
+            if (userIndex > -1)
                 return true;
 
             return false;

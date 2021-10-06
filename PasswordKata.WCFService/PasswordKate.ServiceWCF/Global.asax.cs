@@ -11,7 +11,7 @@ using System.Web;
 using System.Web.Security;
 using System.Web.SessionState;
 
-namespace WcfService1
+namespace PasswordKata.ServiceWCF
 {
     public class Global : System.Web.HttpApplication
     {
@@ -25,7 +25,8 @@ namespace WcfService1
             builder.RegisterType<EncryptService>()
                    .As<IEncryptService>();
             builder.RegisterType<UserRepository>()
-                   .As<IUserRepository>();
+                   .As<IUserRepository>()
+                   .WithParameter("path", @"C:\Users\gteam\source\repos\Etapa2\Password-kata\PasswordKata.WCFService\PasswordKata.Infra\File\UserList.json");
             AutofacHostFactory.Container = builder.Build();
         }
 

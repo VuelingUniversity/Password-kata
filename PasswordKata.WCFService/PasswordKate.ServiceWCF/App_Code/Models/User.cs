@@ -4,15 +4,15 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.Web;
 
-namespace WcfService1.Models
+namespace PasswordKata.ServiceWCF.Models
 {
     [DataContract]
     public class User
     {
-        [DataMember(IsRequired = true)]
+        [DataMember(IsRequired = true, Order = 0)]
         public string Username { get; set; }
 
-        [DataMember(IsRequired = true)]
+        [DataMember(IsRequired = true, Order = 1)]
         public string Password { get; set; }
     }
 }

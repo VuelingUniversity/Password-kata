@@ -5,7 +5,7 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
-using WcfService1.Models;
+using PasswordKata.ServiceWCF.Models;
 
 namespace PasswordKata.ServiceWCF
 {
@@ -15,6 +15,9 @@ namespace PasswordKata.ServiceWCF
     {
         [OperationContract]
         bool AreValidUserCredentials(User user);
+
+        [OperationContract]
+        bool AddUser(User user);
 
         [OperationContract]
         void SendResetEmail(string email);
