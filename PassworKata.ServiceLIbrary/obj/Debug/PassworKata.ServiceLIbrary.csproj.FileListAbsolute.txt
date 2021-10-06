@@ -1,0 +1,9 @@
+C:\Users\gteam\source\repos\PaswordKata.Core\PassworKata.ServiceLIbrary\bin\Debug\PassworKata.ServiceLIbrary.dll
+C:\Users\gteam\source\repos\PaswordKata.Core\PassworKata.ServiceLIbrary\bin\Debug\PassworKata.ServiceLIbrary.pdb
+C:\Users\gteam\source\repos\PaswordKata.Core\PassworKata.ServiceLIbrary\bin\Debug\PasswordKata.Core.dll
+C:\Users\gteam\source\repos\PaswordKata.Core\PassworKata.ServiceLIbrary\bin\Debug\PasswordKata.Core.pdb
+C:\Users\gteam\source\repos\PaswordKata.Core\PassworKata.ServiceLIbrary\obj\Debug\PassworKata.ServiceLIbrary.csproj.AssemblyReference.cache
+C:\Users\gteam\source\repos\PaswordKata.Core\PassworKata.ServiceLIbrary\obj\Debug\PassworKata.ServiceLIbrary.csproj.CoreCompileInputs.cache
+C:\Users\gteam\source\repos\PaswordKata.Core\PassworKata.ServiceLIbrary\obj\Debug\PassworKata.ServiceLIbrary.csproj.CopyComplete
+C:\Users\gteam\source\repos\PaswordKata.Core\PassworKata.ServiceLIbrary\obj\Debug\PassworKata.ServiceLIbrary.dll
+C:\Users\gteam\source\repos\PaswordKata.Core\PassworKata.ServiceLIbrary\obj\Debug\PassworKata.ServiceLIbrary.pdb

@@ -22,7 +22,7 @@ namespace PasswordKata.InfraStructure.Repositories
             return _users.FirstOrDefault(name => name.Name == username);
         }
 
-        public bool IsEmailValid(string email)
+        public bool CheckEmailValid(string email)
         {
             return _users.Exists(mail => mail.Email == email);
         }
