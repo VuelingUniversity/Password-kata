@@ -20,6 +20,8 @@ namespace PasswordKata.ServiceLibrary.Services
 
         public bool CheckUser(string username, string password)
         {
+            if (string.IsNullOrEmpty(password) || string.IsNullOrEmpty(username))
+                return false;
             return _userRepository.CheckUser(username, _encryptService.GetHashPassword(password));
         }
 
