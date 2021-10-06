@@ -15,12 +15,13 @@ namespace Password_Kata_Test
     {
         private Mock<IUserRepository> mockUserRepository;
         private Mock<IEncryptService> mockEncryptService;
+
         public EncryptServiceTest()
         {
             mockUserRepository = new Mock<IUserRepository>();
             mockEncryptService = new Mock<IEncryptService>();
         }
-        [TestInitialize]
+        //[TestInitialize]
         //public void GetSUT()
         //{
         //    var sut = new EncryptService();
@@ -63,5 +64,3 @@ namespace Password_Kata_Test
         }
     }
 }
-// if(string.IsNullOrEmpty(password)
-//  return false;

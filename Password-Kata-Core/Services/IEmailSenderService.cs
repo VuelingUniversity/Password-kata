@@ -8,6 +8,6 @@ namespace Password_Kata_Core.Services
 {
     public interface IEmailSenderService
     {
-        void SendResetEmail(string email, string message);
+        void SendEmail(string email, string message);
     }
 }

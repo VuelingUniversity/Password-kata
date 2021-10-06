@@ -21,7 +21,7 @@ namespace Password_Kata_Infra
                 EnableSsl = true,
             };  
         }
-        public void SendResetEmail(string email, string message)
+        public void SendEmail(string email, string message)
         {
             _smtpClient.Send("email", "recipient", "subject", "body");
         }

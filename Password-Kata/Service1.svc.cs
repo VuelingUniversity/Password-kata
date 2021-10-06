@@ -13,8 +13,8 @@ namespace Password_Kata
     public class Service1 : IService1
     {
         IValidatePasswordService _validatePasswordService;
-        IEmailSenderService _emailService;
-        public Service1(IValidatePasswordService validatePasswordService, IEmailSenderService emailService)
+        IEmailService _emailService;
+        public Service1(IValidatePasswordService validatePasswordService, IEmailService emailService)
         {
             _validatePasswordService = validatePasswordService;
             _emailService = emailService;

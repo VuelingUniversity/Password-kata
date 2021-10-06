@@ -20,8 +20,8 @@ namespace Password_Kata_ServiceLibrary
         {
             if (_userRepository.EmailExistInRepo(email))
             {
-                string emailMessage = $"Validation Link: ";
-                _emailSenderService.SendResetEmail(email, emailMessage);
+                string emailMessage = $"Validation Link: -----";
+                _emailSenderService.SendEmail(email, emailMessage);
             }
 
         }
