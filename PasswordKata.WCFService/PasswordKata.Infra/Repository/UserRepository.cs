@@ -23,7 +23,7 @@ namespace PasswordKata.Infra
 
         public bool CheckUser(string username, string password)
         {
-            if (_userList == null || _userList.Count < 1)
+            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password) || _userList == null || _userList.Count < 1)
                 return false;
             UpdateUserList();
             var userIndex = _userList.FindIndex(user => user.Username == username && user.Password == password);
@@ -41,9 +41,9 @@ namespace PasswordKata.Infra
 
         public bool AddUser(string username, string password)
         {
-            User user = new User { Username = username, Password = password };
-            if (user == null || user.Username == "" || user.Password == "")
+            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
                 return false;
+            User user = new User { Username = username, Password = password };
             UpdateUserList();
             if (GetUserFromUsername(username) != null)
                 return false;
@@ -70,7 +70,16 @@ namespace PasswordKata.Infra
 
         public void UpdateUserList()
         {
-            string register = File.ReadAllText(_path);
+            string register;
+            try
+            {
+                register = File.ReadAllText(_path);
+            }
+            catch (Exception e)
+            {
+                return;
+            }
+
             if (register == null || register == "")
             {
                 _userList = new List<User>();

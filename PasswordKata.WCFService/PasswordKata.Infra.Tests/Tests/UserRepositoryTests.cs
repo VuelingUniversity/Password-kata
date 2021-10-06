@@ -50,8 +50,26 @@ namespace PasswordKata.Infra.Tests
         [Test]
         public void When_User_AlreadyExists_Returns_False()
         {
-            Assert.IsFalse(_userRepository.AddUser("nacho", "1234"));
-            Assert.IsFalse(_userRepository.CheckUser("nacho", "1234"));
+            Assert.IsFalse(_userRepository.AddUser("nacho", "encryptedPass"));
+            Assert.IsFalse(_userRepository.CheckUser("nacho", "encryptedPass"));
+        }
+
+        [Test]
+        public void When_User_Is_Null_Or_Empty_Check_Returns_False()
+        {
+            Assert.IsFalse(_userRepository.CheckUser("", "encryptedPass"));
+        }
+
+        [Test]
+        public void When_Password_Is_Null_Or_Empty_Check_Returns_False()
+        {
+            Assert.IsFalse(_userRepository.CheckUser("username", null));
+        }
+
+        [Test]
+        public void When_User_Or_Password_Is_Null_Or_Empty_Add_Returns_False()
+        {
+            Assert.IsFalse(_userRepository.AddUser("username", null));
         }
     }
 }
