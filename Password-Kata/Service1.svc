@@ -1,1 +1,4 @@
-﻿<%@ ServiceHost Language="C#" Debug="true" Service="Password_Kata.Service1" CodeBehind="Service1.svc.cs" %>
+﻿<%@ ServiceHost Language="C#" 
+    Debug="true" 
+    Service="Password_Kata.IService1, Password_Kata" 
+    Factory="Autofac.Integration.Wcf.AutofacServiceHostFactory, Autofac.Integration.Wcf"  %>

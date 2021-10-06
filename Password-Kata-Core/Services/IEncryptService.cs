@@ -11,5 +11,6 @@ namespace Password_Kata_Core.Services
         string ComputeHash(byte[] bytesToHash, byte[] salt);
         string GenerateSalt();
         string EncryptPassword(string password, string salt);
+        bool CheckPassword(string salt, string password, string encryptedPassword);
     }
 }

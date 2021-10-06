@@ -11,18 +11,26 @@ namespace Password_Kata_ServiceLibrary
     {
         private IUserRepository _userRepository;
         private IEncryptService _encryptService;
-        private string salt;
         public ValidatePasswordService(IUserRepository userRepository, IEncryptService encryptService)
         {
             _userRepository = userRepository;
             _encryptService = encryptService;
         }
-        public bool ValidatePassword(string userName, string password)
+        
+        public bool ValidateUser(string userName, string password)
+        {
+            if (string.IsNullOrEmpty(userName)) return false;
+            if (string.IsNullOrEmpty(password)) return false;
+            var user = _userRepository.GetUserByName(userName);
+            var result = _encryptService.CheckPassword(user.Salt, password, user.Password);
+            return result;
+        }
+        public bool ValidateUser2(string userName, string password)
         {
             var user = _userRepository.GetUserByName(userName);
-            if (user == null)
-                return false;
-            return user.Password.Equals(_encryptService.EncryptPassword(password, salt));
+            var newEncryptedPassword = _encryptService.EncryptPassword(password, user.Salt);
+            return newEncryptedPassword == user.Password;
         }
+
     }
 }

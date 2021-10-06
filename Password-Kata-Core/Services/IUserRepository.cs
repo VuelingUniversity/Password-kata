@@ -10,5 +10,6 @@ namespace Password_Kata_Core.Services
     public interface IUserRepository
     {
         User GetUserByName(string userName);
+        string GetPassByName(string userName);
     }
 }

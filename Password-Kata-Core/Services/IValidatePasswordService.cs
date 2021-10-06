@@ -8,6 +8,7 @@ namespace Password_Kata_Core.Services
 {
     public interface IValidatePasswordService
     {
-        bool ValidatePassword(string userName, string password);
+        bool ValidateUser(string userName, string password);
+        bool ValidateUser2(string userName, string password);
     }
 }
