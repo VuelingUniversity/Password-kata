@@ -8,7 +8,7 @@ namespace Password.Core.Services
 {
     public interface IEncryptionService
     {
-        bool ValidatePassword(string username, string password);
+        bool CheckPassword(string salt, string password, string encryptedPassword);
 
         string EncryptPassword(string password, string salt);
     }

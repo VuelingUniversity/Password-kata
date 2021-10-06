@@ -25,6 +25,8 @@ namespace PasswordWCF
                 .As<IUserRepository>();
             builder.RegisterType<EmailService>()
                 .As<IEmailService>();
+            builder.RegisterType<ValidationService>()
+                .As<IValidationService>();
             AutofacHostFactory.Container = builder.Build();
         }
 

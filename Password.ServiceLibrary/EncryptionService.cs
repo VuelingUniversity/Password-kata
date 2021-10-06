@@ -11,22 +11,9 @@ namespace Password.ServiceLibrary
 {
     public class EncryptionService : IEncryptionService
     {
-        private IUserRepository _userRepository;
-
-        public EncryptionService(IUserRepository userRepository)
+        public bool CheckPassword(string salt, string password, string encryptedPassword)
         {
-            _userRepository = userRepository;
-        }
-
-        public bool ValidatePassword(string username, string password)
-        {
-            var user = _userRepository.GetUserByUsername(username);
-
-            if (user == null)
-            {
-                return false;
-            }
-            return user.Password.Equals(EncryptPassword(password, user.Salt));
+            return encryptedPassword.Equals(EncryptPassword(password, salt));
         }
 
         public string EncryptPassword(string password, string salt)
