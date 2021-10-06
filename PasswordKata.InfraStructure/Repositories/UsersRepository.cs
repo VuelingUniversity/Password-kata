@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PasswordKata.InfraStructure.Repositories
 {
-    public class UsersRepository
+    public class UsersRepository : IUsersRepository
     {
         public List<Users> _users;
         public UsersRepository()
