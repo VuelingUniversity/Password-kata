@@ -1,4 +1,10 @@
-﻿using System;
+﻿using Autofac;
+using Autofac.Integration.Wcf;
+using PasswordKata.Core.Services;
+using PasswordKata.Infra;
+using PasswordKata.ServiceLibrary.Services;
+using PasswordKata.ServiceWCF;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,40 +15,42 @@ namespace WcfService1
 {
     public class Global : System.Web.HttpApplication
     {
-
         protected void Application_Start(object sender, EventArgs e)
         {
-
+            var builder = new ContainerBuilder();
+            builder.RegisterType<AuthService>()
+                   .As<IAuthService>();
+            builder.RegisterType<UserService>()
+                   .As<IUserService>();
+            builder.RegisterType<EncryptService>()
+                   .As<IEncryptService>();
+            builder.RegisterType<UserRepository>()
+                   .As<IUserRepository>();
+            AutofacHostFactory.Container = builder.Build();
         }
 
         protected void Session_Start(object sender, EventArgs e)
         {
-
         }
 
         protected void Application_BeginRequest(object sender, EventArgs e)
         {
-
         }
 
         protected void Application_AuthenticateRequest(object sender, EventArgs e)
         {
-
         }
 
         protected void Application_Error(object sender, EventArgs e)
         {
-
         }
 
         protected void Session_End(object sender, EventArgs e)
         {
-
         }
 
         protected void Application_End(object sender, EventArgs e)
         {
-
         }
     }
 }

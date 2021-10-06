@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PasswordKata.ServiceLibrary.Services
 {
-    public class UserService
+    public class UserService : IUserService
     {
         private IUserRepository _userRepository;
         private IEncryptService _encryptService;
