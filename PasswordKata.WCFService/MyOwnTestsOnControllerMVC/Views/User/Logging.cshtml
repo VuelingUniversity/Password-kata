@@ -1,0 +1,24 @@
+﻿@model MyOwnTestsOnControllerMVC.Models.User
+@{
+    ViewBag.Title = "Logging";
+}
+
+<table class="table">
+    <tr>
+        <th>Username</th>
+        <th>Password</th>
+        <th>Action</th>
+    </tr>
+    @using (Html.BeginForm("TryToLog", "User", FormMethod.Post))
+    {
+        <tr>
+            <td>@Html.TextBoxFor(model => model.Name, new {@readonly = "readonly"})</td>
+            <td>@Html.TextBoxFor(model => model.Password,
+                                new {placeholder = "Password", @type = "password" })</td>
+            <td>
+                <input type="submit" value="Log in" />
+            </td>
+        </tr>
+
+    }
+    </table>

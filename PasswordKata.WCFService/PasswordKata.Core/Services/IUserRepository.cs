@@ -1,4 +1,5 @@
 ﻿using PasswordKata.Core;
+using System.Collections.Generic;
 
 namespace PasswordKata.Core.Services
 {
@@ -13,5 +14,6 @@ namespace PasswordKata.Core.Services
         void UpdateUserList();
 
         bool UpdateUserRepository();
+        List<string> GetUsers();
     }
 }

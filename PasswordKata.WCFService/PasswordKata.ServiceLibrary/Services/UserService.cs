@@ -1,4 +1,5 @@
-﻿using PasswordKata.Core.Services;
+﻿using PasswordKata.Core;
+using PasswordKata.Core.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,6 +29,11 @@ namespace PasswordKata.ServiceLibrary.Services
         public bool AddUser(string username, string password)
         {
             return _userRepository.AddUser(username, _encryptService.GetHashPassword(password));
+        }
+
+        public List<string> GetUsers()
+        {
+            return _userRepository.GetUsers();
         }
     }
 }

@@ -1,0 +1,25 @@
+﻿@model List<string>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2 style="text-align: center"><b>CLIENTS LIST</b></h2>
+<table class="table">
+    <tr>
+        <th>Username</th>
+        <th style="text-align: center;">Action</th>
+        <th>@Html.ActionLink("ADD USERS", "Add", "User", null, null)</th>
+    </tr>
+    @foreach (var name in Model)
+    {
+        <tr>
+            <td>@name</td>
+            <td style="text-align: center;">
+                @Html.ActionLink("Log in", "Logging", "User", new { username = name }, null)
+                |
+                @Html.ActionLink("Delete", "Delete", "User", new { username = name }, null)
+            </td>
+            <td></td>
+        </tr>
+    }
+</table>

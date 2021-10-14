@@ -87,5 +87,17 @@ namespace PasswordKata.Infra
             }
             _userList = JsonConvert.DeserializeObject<List<User>>(register);
         }
+
+        public List<string> GetUsers()
+        {
+            UpdateUserList();
+            var list = _userList.Select(x => x.Username);
+            List<string> nameList = new List<string>();
+            foreach (var item in list)
+            {
+                nameList.Add(item);
+            }
+            return nameList;
+        }
     }
 }
